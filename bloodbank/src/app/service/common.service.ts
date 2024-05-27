@@ -8,8 +8,15 @@ import { Observable } from 'rxjs';
 export class CommonService {
   constructor(private http: HttpClient) {}
   public loginUrl: string = 'http://localhost:8090/enlife/login';
+  public regUrl:string = 'http://localhost:8090/enlife/register'
 
   userLogin(data: any): Observable<any> {
     return this.http.post(this.loginUrl,data)
+  }
+
+  userReg(data:any):Observable<any> {
+    console.log(data);
+    return this.http.post(this.regUrl,data)
+
   }
 }
