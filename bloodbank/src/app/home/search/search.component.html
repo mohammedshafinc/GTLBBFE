@@ -1,0 +1,37 @@
+<div
+  class="flex items-center justify-center gap-4 p-8 bg-gray-100 border border-gray-300 rounded-lg"
+>
+  <form
+    [formGroup]="searchForm"
+    (ngSubmit)="onSearch()"
+    class="flex items-center gap-4"
+  >
+    <div class="flex flex-col">
+      <label for="bloodGroup" class="mb-2 text-lg text-gray-700"
+        >Blood Group</label
+      >
+      <select
+        id="bloodGroup"
+        formControlName="bloodGroup"
+        class="p-2 text-lg border border-gray-300 rounded"
+      >
+        <option value="" disabled selected>Select Blood Group</option>
+        <option *ngFor="let group of bloodGroups" [value]="group">
+          {{ group }}
+        </option>
+      </select>
+    </div>
+
+    <div class="flex flex-col">
+      <label for="place" class="mb-2 text-lg text-gray-700">Place</label>
+      <input type="text" class="h-[34px] border border-gray-300" formControlName="place" required="" />
+    </div>
+
+    <button
+      type="submit"
+      class="px-6 py-2 mt-6 text-lg text-white bg-gradient-to-r from-[#280b31] to-[#ee0b0b] rounded"
+    >
+      Search
+    </button>
+  </form>
+</div>

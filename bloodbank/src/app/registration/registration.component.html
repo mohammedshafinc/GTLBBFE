@@ -1,4 +1,4 @@
-<div class="main">
+<!-- <div class="main">
   <section class="container">
     <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()"  class="form" >
       <div class="form-box">
@@ -45,11 +45,11 @@
         </div>
         <div class="input-box address">
           <label>Address</label>
-          <input type="text" name="address"  formControlName="Address" placeholder="Enter street address" required />
+          <input type="text" name="address"  formControlName="address" placeholder="Enter street address" required />
 
           <div class="column">
             <div class="select-box">
-              <select name="bloodgrp" formControlName="bdgrp">
+              <select name="bloodgrp" formControlName="bloodGroup">
                 <option value="" disabled selected>blood group</option>
                 <option>A+</option>
                 <option>A-</option>
@@ -87,7 +87,7 @@
           </div>
           <div class="input-box">
             <label>Last donated date</label>
-            <input type="date" name="lastdate"  formControlName = "ldd" placeholder="Enter last blood donated date"/>
+            <input type="date" name="lastdate"  formControlName = "lastDonatedDate" placeholder="Enter last blood donated date"/>
           </div>
         </div>
         <button type="submit" value="">Submit</button>
@@ -95,8 +95,211 @@
 
       </div>
     </form>
+
   </section>
 </div>
 
 
+ -->
 
+ <div class="max-w-4xl mx-auto font-[sans-serif] text-[#333] p-6">
+  <div class="text-center mb-16">
+    <h4 class="text-base font-semibold mt-3">Sign up into your account</h4>
+  </div>
+  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+    <div class="grid sm:grid-cols-2 gap-y-7 gap-x-12">
+      <div>
+        <label class="text-sm mb-2 block">Full Name</label>
+        <input
+          name="name"
+          type="text"
+          formControlName="name"
+          class="bg-gray-100 w-full text-sm px-4 py-3.5 rounded-md outline-blue-500"
+          placeholder="Enter full name"
+        />
+      </div>
+      <div>
+        <label class="text-sm mb-2 block">Mobile No.</label>
+        <input
+          name="lname"
+          type="number"
+          formControlName="mobile"
+          class="bg-gray-100 w-full text-sm px-4 py-3.5 rounded-md outline-blue-500"
+          placeholder="Enter mobile no"
+        />
+      </div>
+      <div>
+        <label class="text-sm mb-2 block">Email Id</label>
+        <input
+          name="email"
+          type="text"
+          formControlName="email"
+          class="bg-gray-100 w-full text-sm px-4 py-3.5 rounded-md outline-blue-500"
+          placeholder="Enter email"
+        />
+      </div>
+
+      <div>
+        <label class="text-sm mb-2 block">Blood Group</label>
+        <select
+          name="bloodGroup"
+          formControlName="bloodGroup"
+          class="bg-gray-100 w-full text-sm px-4 py-3.5 rounded-md outline-blue-500"
+        >
+          <option value="">Select Blood Group</option>
+          <option value="A+">A+</option>
+          <option value="A-">A-</option>
+          <option value="B+">B+</option>
+          <option value="B-">B-</option>
+          <option value="O+">O+</option>
+          <option value="O-">O-</option>
+          <option value="AB+">AB+</option>
+          <option value="AB-">AB-</option>
+        </select>
+      </div>
+      <div>
+        <label class="text-sm mb-2 block">Password</label>
+        <input
+          name="password"
+          type="password"
+          formControlName="password"
+          class="bg-gray-100 w-full text-sm px-4 py-3.5 rounded-md outline-blue-500"
+          placeholder="Enter password"
+        />
+      </div>
+
+      <div>
+        <label class="text-sm mb-2 block">DOB</label>
+        <input
+          name="name"
+          type="date"
+          formControlName="dob"
+          class="bg-gray-100 w-full text-sm px-4 py-3.5 rounded-md outline-blue-500"
+          placeholder="Enter Date of birth"
+          [max]="maxDate| date:'yyyy-MM-dd'"
+        />
+      </div>
+      <div>
+        <label class="text-sm mb-2 block">House Name</label>
+        <input
+          name="lname"
+          type="text"
+          formControlName="address"
+          class="bg-gray-100 w-full text-sm px-4 py-3.5 rounded-md outline-blue-500"
+          placeholder="Enter house name"
+        />
+      </div>
+      <div>
+        <label class="text-sm mb-2 block">City</label>
+        <input
+          name="email"
+          type="text"
+          formControlName="city"
+          class="bg-gray-100 w-full text-sm px-4 py-3.5 rounded-md outline-blue-500"
+          placeholder="Enter city"
+        />
+      </div>
+      <div>
+        <label class="text-sm mb-2 block">Last Donated Date</label>
+        <input
+          name="Lastdate"
+          type="date"
+          formControlName="lastDonatedDate"
+          class="bg-gray-100 w-full text-sm px-4 py-3.5 rounded-md outline-blue-500"
+          placeholder="Enter Last donated date"
+          [max]="lastDonate"
+
+        />
+      </div>
+      <div>
+        <label class="text-sm mb-2 block">District</label>
+        <input
+          name="number"
+          type="text"
+          formControlName="district"
+          class="bg-gray-100 w-full text-sm px-4 py-3.5 rounded-md outline-blue-500"
+          placeholder="Enter district"
+        />
+      </div>
+
+      <div>
+        <label class="text-sm mb-2 block">Pin</label>
+        <input
+          name="cpassword"
+          type="number"
+          formControlName="pincode"
+          class="bg-gray-100 w-full text-sm px-4 py-3.5 rounded-md outline-blue-500"
+          placeholder="Enter pin"
+        />
+      </div>
+      <div>
+        <label class="text-sm mb-2 block">Gender</label>
+        <div class="flex items-center gap-3">
+          <div>
+            <input
+              type="radio"
+              id="male"
+              formControlName="gender"
+              name="gender"
+              value="male"
+              class="outline-blue-500"
+            />
+            <label for="male" class="text-sm">Male</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              id="female"
+              formControlName="gender"
+              name="gender"
+              value="female"
+              class="outline-blue-500"
+            />
+            <label for="female" class="text-sm">Female</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              id="other"
+              formControlName="gender"
+              name="gender"
+              value="other"
+              class="outline-blue-500"
+            />
+            <label for="other" class="text-sm">Other</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      *ngIf="errMsg"
+      class="flex items-center p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-800 mt-5"
+      role="alert"
+    >
+      <svg
+        class="flex-shrink-0 inline w-4 h-4 me-3"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="currentColor"
+        viewBox="0 0 20 20"
+      >
+        <path
+          d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+        />
+      </svg>
+
+      <div>
+        <span class="font-medium">{{ errMsg }}</span>
+      </div>
+    </div>
+    <div class="!mt-10">
+      <button
+        type="submit"
+
+        class="min-w-[150px] py-3 px-4 text-sm font-semibold rounded text-white bg-blue-500 hover:bg-blue-600 focus:outline-none"
+      >
+        Sign up
+      </button>
+    </div>
+  </form>
+</div>

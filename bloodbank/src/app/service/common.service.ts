@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -16,7 +16,8 @@ export class CommonService {
 
   userReg(data:any):Observable<any> {
     console.log(data);
-    return this.http.post(this.regUrl,data)
-
+    // Configure HttpClient to Handle Plain Text
+    const headers = new HttpHeaders({'Content-Type': 'application/json'});
+    return this.http.post(this.regUrl,data,{ headers, responseType: 'text' });
   }
 }

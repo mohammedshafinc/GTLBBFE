@@ -1,157 +1,150 @@
-<!-- header section starts  -->
-<header>
-  <a href="index.php" class="logo"><span>EN</span>LIFE</a>
-  <input type="checkbox" id="menu-bar" />
-  <label for="menu-bar" class="fas fa-bars"></label>
-  <nav class="navbar">
-    <a href="index.php">Home</a>
-    <a href="about.php">About</a>
-    <a href="canidonate.php">Donate</a>
-    <a href="notification.php">Camps</a>
-    <a href="login.php">Login</a>
-    <a href="admin/login.php">Admin</a>
-  </nav>
+
+
+  <!-- header section starts  -->
+  <header>
+    <a href="index.php" class="logo"><span>EN</span>LIFE</a>
+    <input type="checkbox" id="menu-bar">
+    <label for="menu-bar" class="fas fa-bars"></label>
+    <nav class="navbar">
+        <a href="index.php">Home</a>
+        <a href="about.php">About</a>
+        <a href="canidonate.php">Donate</a>
+        <a href="notification.php">Camps</a>
+        <a href="login.php">Login</a>
+        <a href="adminlogin.php">Admin</a>
+    </nav>
 </header>
-<!-- header section ends -->
-<!-- home section starts  -->
-<section class="home" id="home">
-  <div class="content">
-    <p>
-      "Be a lifesaver! search our database of willing blood donors and help save
-      life today."
-    </p>
-    <h3>Search For <span>Donors</span></h3>
-    <!-- HTML form for the search bar -->
-    <form method="post" action="">
-      <label for="bloodgrp">Select blood group:</label>
-      <select name="bloodgrp">
-        <option value="">--Select--</option>
-      </select>
-      <label for="city">Select city:</label>
-      <select name="city">
-        <option value="">--Select--</option>
-      </select>
-      <button type="submit" name="dettab">Search</button>
-    </form>
-    <!-- Display the search results if a blood group and/or city has been selected -->
-    <!-- Add a div for the popup window -->
-  </div>
-  <!-- </div> -->
-  <!-- </div> -->
-  <div class="image">
-    <img src="../../assets/images/title6.png" alt="" />
-  </div>
+
+  <!-- header section ends -->
+
+  <!-- home section starts  -->
+  <section class="home" id="home">
+    <div class="content">
+      <p>"Be a lifesaver! Search our database of willing blood donors and help save life today."</p>
+      <h3>Search For <span>Donors</span></h3>
+
+   <!-- search box -->
+<app-search></app-search>
+
+
+      <!-- <div id="popup">
+        <h3>Available blood units:</h3>
+        <p>No blood units available.</p>
+        <form method="post">
+          <input type="hidden" value="true" name="clso">
+          <input type="submit" class="be" value="close">
+        </form>
+      </div> -->
+    </div>
+    <div class="image">
+      <img src="../../assets/images/title6.png" alt="">
+    </div>
+  </section>
+
+
+
+  <!-- home section ends -->
+
+  <section class="features" id="features">
+    <div class="box-container">
+        <div class="box">
+            <img src="../../assets/images/bluu.png" alt="">
+            <h3>Can I donate blood?</h3>
+            <p>Be a life-giver! Check eligibility to donate blood and save a life today.<br>Visit our website now!</p>
+            <a href="canidonate.php" class="btn">Check your eligibility&#x2192;</a>
+        </div>
+        <div class="box">
+            <img src="../../assets/images/blu.jpg" alt="">
+            <h3>Donate now</h3>
+            <p>Give the gift of life! Register now to become a blood donor and<br>save lives in your community.</p>
+            <a href="canidonate.php" class="btn">Register here&#x2192;</a>
+        </div>
+        <div class="box">
+            <img src="../../assets/images/bluuu1.png" alt="">
+            <h3>Camp registration</h3>
+            <p>Save a life, give the gift of blood. Register now to conduct a blood donation camp and be a hero in someone's story.</p>
+            <a href="camp.php" class="btn">Register here&#x2192;</a>
+        </div>
+    </div>
 </section>
 
-<!-- home section ends -->
-<section class="features" id="features">
-  <div class="box-container">
-    <div class="box">
-      <img src="../../assets/images/bluu.png" alt="" />
-      <h3>Can I donate blood?</h3>
-      <p>
-        "Be a life-giver! Check eligibility to donate blood and save a life
-        today.<br />
-        Visit our website now!"
-      </p>
-      <a href="canidonate.php" class="btn">Check your eligibility</a>
+
+  <!-- contact section starts  -->
+  <section class="contact" id="contact">
+    <div class="image">
+      <img src="../../assets/images/contactus1.png" alt="">
     </div>
-    <div class="box">
-      <img src="../../assets/images/blu.jpg" alt="" />
-      <h3>Donate now</h3>
-      <p>
-        "Give the gift of life! Register now to become a blood donor and<br />
-        save lives in your community "
-      </p>
-      <a href="canidonate.php" class="btn">Register here</a>
-    </div>
-    <div class="box">
-      <img src="../../assets/images/bluuu1.png" alt="" />
-      <h3>Camp registration</h3>
-      <p>
-        "Save a life,give the gift of blood.Register now to conduct a blood
-        donation camp and be a hero in someone's story."
-      </p>
-      <a href="camp.php" class="btn">Register here</a>
-    </div>
-  </div>
-</section>
-<!-- contact section starts  -->
-<section class="contact" id="contact">
-  <div class="image">
-    <img src="../../assets/images/contactus1.png" alt="" />
-  </div>
-  <form action="">
-    <h1 class="heading">contact us</h1>
-    <div class="inputBox">
-      <input type="text" required />
-      <label>Name</label>
-    </div>
-    <div class="inputBox">
-      <input type="email" required />
-      <label>Email</label>
-    </div>
-    <div class="inputBox">
-      <input type="number" required />
-      <label>Phone</label>
-    </div>
-    <div class="inputBox">
-      <textarea required name="" id="" cols="30" rows="10"></textarea>
-      <label>Message</label>
-    </div>
-    <input type="submit" class="btn" value="send message" />
-  </form>
-</section>
-<!-- contact section edns -->
-<!-- footer section starts  -->
-<div class="footer">
-  <div class="box-container">
-    <div class="box">
-      <h3>About Us</h3>
-      <p>
-        EnLife connects those in need of blood transfusions with willing blood
-        donors. Our mission is to make the process of finding a blood donor
-        easier and more efficient, ultimately saving lives and improving the
-        health of our community.
-      </p>
-    </div>
-    <div class="box">
-      <h3>Quick links</h3>
-      <a href="index.php">home</a>
-      <a href="about.php">About</a>
-      <a href="canidonate.php">Donate</a>
-      <a href="notification.php">Camps</a>
-      <a href="login.php">Login</a>
-      <a href="admin/login.php">Admin</a>
-    </div>
-    <div class="box">
-      <h3>Follow Us</h3>
-      <a href="#">facebook</a>
-      <a href="#">instagram</a>
-      <a href="#">Linkdin</a>
-      <a href="#">twitter</a>
-    </div>
-    <div class="box">
-      <h3>Contact Info</h3>
-      <div class="info">
-        <i class="fas fa-phone"></i>
-        <p>
-          +917994648644 <br />
-          +918086151061
-        </p>
+    <form action="" name="submit-to-google-sheet">
+      <h1 class="heading">Contact Us</h1>
+      <div class="inputBox">
+        <input type="text" name="name" required>
+
+        <label>Name</label>
       </div>
-      <div class="info">
-        <i class="fas fa-envelope"></i>
-        <p>
-          <a href="mailto:shafinms21@gmail.com">shafinms21gmail.com</a><br />
-          <a href="mailto:tajay5767@gmail.com">tajay5767.com</a>
-        </p>
+
+      <div class="inputBox">
+        <input type="email" name="email" required>
+        <label>Email</label>
       </div>
-      <div class="info">
-        <i class="fas fa-map-marker-alt"></i>
-        <p>Nilambur, Kerala - 679328</p>
+
+      <div class="inputBox">
+        <input type="number" name="phone" required>
+        <label>Phone</label>
+      </div>
+
+      <div class="inputBox">
+        <textarea required name="messege" id="" cols="30" rows="10"></textarea>
+        <label>Message</label>
+      </div>
+
+      <input type="submit" class="btn" value="Send Message">
+    </form>
+    <span id="msg"></span>
+  </section>
+
+  <!-- contact section ends -->
+
+  <!-- footer section starts  -->
+  <div class="footer">
+    <div class="box-container">
+      <div class="box">
+        <h3>About Us</h3>
+        <p>EnLife connects those in need of blood transfusions with willing blood donors. Our mission is to make the process of finding a blood donor easier and more efficient, ultimately saving lives and improving the health of our community.</p>
+      </div>
+
+      <div class="box">
+        <h3>Quick links</h3>
+        <a href="index.php">Home</a>
+        <a href="about.php">About</a>
+        <a href="canidonate.php">Donate</a>
+        <a href="notification.php">Camps</a>
+        <a href="login.php">Login</a>
+        <a href="adminlogin.php">Admin</a>
+      </div>
+
+      <div class="box">
+        <h3>Follow Us</h3>
+        <a href="https://www.facebook.com/profile.php?id=100089540105817">Facebook</a>
+        <a href="https://www.instagram.com/shfn.ex/">Instagram</a>
+        <a href="https://www.linkedin.com/in/mohammedshafin/">LinkedIn</a>
+        <a href="https://twitter.com/Shfnex">Twitter</a>
+      </div>
+
+      <div class="box">
+        <h3>Contact Info</h3>
+        <div class="info">
+          <i class="fas fa-phone"></i>
+          <p> +917994648644 <br> +918086151061 </p>
+        </div>
+        <div class="info">
+          <i class="fas fa-envelope"></i>
+          <p> shafinms21gmail.com <br> tajay5657gmail.com </p>
+        </div>
+        <div class="info">
+          <i class="fas fa-map-marker-alt"></i>
+          <p> Nilambur, Kerala - 679328 </p>
+        </div>
       </div>
     </div>
-  </div>
-  <h1 class="credit">&copy; Copyright 2023 by Team Enlife</h1>
-</div>
+    <h1 class="credit"> &copy; Copyright 2024 by Team Enlife </h1>
+
