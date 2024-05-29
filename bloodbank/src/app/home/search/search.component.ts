@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { CommonService } from 'src/app/service/common.service';
 
 @Component({
   selector: 'app-search',
@@ -7,13 +8,17 @@ import { FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent {
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private commonserv: CommonService) {}
   bloodGroups: string[] = ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'];
   places: string = '';
+  searchResult: any[] = [];
+message:string = ''
+
+
 
   searchForm = this.fb.group({
     bloodGroup: ['', Validators.required],
-    place: ['', Validators.required],
+    city: ['', Validators.required],
   });
 
   get f() {
@@ -22,6 +27,31 @@ export class SearchComponent {
 
   onSearch() {
     const searchvalue = this.searchForm.value;
-    console.log(searchvalue);
+
+    this.commonserv.search(searchvalue).subscribe({
+      next: (res: any) => {
+
+        console.log(res);
+        this.searchResult = res;
+        if (this.searchResult.length == 0){
+
+          this.message = 'no data available'
+          console.log("no data availavble");
+
+        } else {
+
+          for (const result of this.searchResult) {
+            console.log(result.name);
+
+          }
+        }
+      },
+      error: (error) => {
+        console.log(error);
+      },
+    });
   }
+
+
+
 }

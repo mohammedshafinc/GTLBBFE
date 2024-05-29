@@ -8,16 +8,20 @@ import { Observable } from 'rxjs';
 export class CommonService {
   constructor(private http: HttpClient) {}
   public loginUrl: string = 'http://localhost:8090/enlife/login';
-  public regUrl:string = 'http://localhost:8090/enlife/register'
+  public regUrl: string = 'http://localhost:8090/enlife/register';
+  public searchApi: string = 'http://localhost:8090/enlife/search';
 
   userLogin(data: any): Observable<any> {
-    return this.http.post(this.loginUrl,data)
+    return this.http.post(this.loginUrl, data);
   }
 
-  userReg(data:any):Observable<any> {
+  userReg(data: any): Observable<any> {
     console.log(data);
     // Configure HttpClient to Handle Plain Text
-    const headers = new HttpHeaders({'Content-Type': 'application/json'});
-    return this.http.post(this.regUrl,data,{ headers, responseType: 'text' });
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.post(this.regUrl, data, { headers, responseType: 'text' });
+  }
+  search(searchValue: any) {
+    return this.http.post(this.searchApi, searchValue);
   }
 }

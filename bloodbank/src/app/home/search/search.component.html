@@ -23,8 +23,13 @@
     </div>
 
     <div class="flex flex-col">
-      <label for="place" class="mb-2 text-lg text-gray-700">Place</label>
-      <input type="text" class="h-[34px] border border-gray-300" formControlName="place" required="" />
+      <label for="city" class="mb-2 text-lg text-gray-700">City</label>
+      <input
+        type="text"
+        class="h-[34px] border border-gray-300"
+        formControlName="city"
+        required=""
+      />
     </div>
 
     <button
@@ -34,4 +39,31 @@
       Search
     </button>
   </form>
+</div>
+<div *ngIf="message">
+  <p>{{ message }}</p>
+</div>
+<div *ngIf="searchResult.length > 0" class="overflow-x-auto">
+  <table class="min-w-full bg-white border border-gray-200">
+    <thead>
+      <tr>
+        <th class="px-4 py-2 border-b">Name</th>
+        <th class="px-4 py-2 border-b">Address</th>
+        <th class="px-4 py-2 border-b">Last Donated Date</th>
+        <th class="px-4 py-2 border-b">Mobile</th>
+        <th class="px-4 py-2 border-b">City</th>
+        <th class="px-4 py-2 border-b">Blood Group</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of searchResult" class="hover:bg-gray-100">
+        <td class="px-4 py-2 border-b">{{ item.name }}</td>
+        <td class="px-4 py-2 border-b">{{ item.address }}</td>
+        <td class="px-4 py-2 border-b">{{ item.lastDonatedDate }}</td>
+        <td class="px-4 py-2 border-b">{{ item.mobile }}</td>
+        <td class="px-4 py-2 border-b">{{ item.city }}</td>
+        <td class="px-4 py-2 border-b">{{ item.bloodGroup }}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
