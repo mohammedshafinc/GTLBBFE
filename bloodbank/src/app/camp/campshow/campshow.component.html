@@ -1,0 +1,9 @@
+<div class="main">
+  <h1>Blood Donation Camp Notification</h1>
+  <div class="notification" *ngFor="let camp of campData">
+    <h2>{{ camp.OrganisationName }}</h2>
+    <p>Camp Date: {{ camp.Date }}</p>
+    <p>Camp Location: {{ camp.Location }}</p>
+    <p>Camp phone: {{ camp.Phone }}</p>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+.main {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  // margin: 0;
+  background-image: url('../../../assets/images/www.jpg');
+  background-repeat: no-repeat;
+  background-size: 110% 100%;
+  height: 100vh;
+}
+
+h1 {
+  text-align: center;
+  color: #8b0000;
+  margin-top: 20px;
+  font-size: 32px;
+}
+
+.notification {
+  background-color: #fff;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.notification h2 {
+  color: #8b0000;
+  font-size: 24px;
+}
+.notification p {
+  margin-top: 10px;
+}

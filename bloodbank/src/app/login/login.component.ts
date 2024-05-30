@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonService } from '../service/common.service';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -11,11 +12,12 @@ export class LoginComponent {
   public email: String = '';
   public password: String = '';
   public error: String = '';
+  public usename:string = ''
 
   constructor(private commonserv: CommonService, private router:Router) {}
 
   redirectToHome(){
-    this.router.navigateByUrl('home')
+    this.router.navigateByUrl('')
   }
 
   onSubmit() {
@@ -28,7 +30,11 @@ export class LoginComponent {
       next: (res) => {
         console.log(res);
         console.log('logged succesfully');
+        console.log(res.Name);
+        localStorage.setItem('username',res.Name)
         this.redirectToHome()
+
+
       },
       error: (error) => {
         console.log(error);

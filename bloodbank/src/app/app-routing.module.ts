@@ -1,12 +1,16 @@
+import { CampComponent } from './camp/camp.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RegistrationComponent } from './registration/registration.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { DemoComponent } from './demo/demo.component';
+import { RequestformComponent } from './registration/requestform/requestform.component';
+import { CampshowComponent } from './camp/campshow/campshow.component';
 
 const routes: Routes = [
 
 {
- path:'',
+ path:'login',
  loadChildren:() => import('./login/login.module').then(m => m.LoginModule)
 },
 {
@@ -14,8 +18,24 @@ const routes: Routes = [
   component:RegistrationComponent
 },
 {
-  path:'home',
+  path:'authform',
+  component:RequestformComponent
+},
+{
+  path:'',
   loadChildren:() => import('./home/home.module').then(m => m.HomeModule)
+},
+{
+  path:'demo',
+  component:DemoComponent
+},
+{
+  path:'campregistration',
+  component:CampComponent
+},
+{
+  path:'showcamp',
+  component:CampshowComponent
 },
 {
   path:'**',

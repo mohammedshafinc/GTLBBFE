@@ -1,3 +1,9 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'poppins',sans-serif;
+  box-sizing: border-box;
+}
 
 .container{
   background-image: url('../../assets/images/www.jpg');
@@ -17,7 +23,6 @@
   background: #fff;
   padding: 50px 60px 70px;
   text-align: center;
-  height: 527px;
 }
 
 .form-box h1{
@@ -166,6 +171,6 @@ form a{
   }
 
   .check-box {
-    font-size: 20px;
+    font-size: 14px;
   }
 }

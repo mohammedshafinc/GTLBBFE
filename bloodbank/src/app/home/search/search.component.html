@@ -1,5 +1,5 @@
 <div
-  class="flex items-center justify-center gap-4 p-8 bg-gray-100 border border-gray-300 rounded-lg"
+  class="flex items-center justify-center gap-4 p-8 bg-gray-100 border border-gray-300 rounded-lg "
 >
   <form
     [formGroup]="searchForm"
@@ -39,6 +39,9 @@
       Search
     </button>
   </form>
+
+
+  <!-- search result -->
 </div>
 <div *ngIf="message">
   <p>{{ message }}</p>

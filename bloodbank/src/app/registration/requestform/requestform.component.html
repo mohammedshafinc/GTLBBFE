@@ -1,0 +1,18 @@
+<div class="main">
+  <div class="container">
+    <h2>Can I Donate Blood?</h2>
+    <form [formGroup]="bloodDonationForm" (ngSubmit)="checkEligibility()">
+      <div class="form-group" *ngFor="let question of questions; let i = index">
+        <label [for]="question.name">{{ i + 1 }}. {{ question.label }}</label><br>
+        <label>
+          <input type="radio" [formControlName]="question.name" value="yes">Yes
+        </label>
+        <label>
+          <input type="radio" [formControlName]="question.name" value="no">No
+        </label>
+      </div>
+      <button type="submit">Check Eligibility</button>
+    </form>
+    <div id="result">{{ resultMessage }}</div>
+  </div>
+</div>

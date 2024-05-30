@@ -1,35 +1,35 @@
 
 
-
   <div class="container">
     <div class="form-box">
       <h1 id="title">SIGN IN</h1>
-      <form (ngSubmit)="onSubmit()" method="post">
+      <form (ngSubmit)="onSubmit()">
         <div class="input-group">
           <div class="input-field">
             <i class="fa-solid fa-envelope"></i>
-            <input type="email" [(ngModel)] = "email" name="un" placeholder="email">
+            <input type="email" [(ngModel)]="email" name="un" placeholder="email">
           </div>
           <div class="input-field">
             <i class="fa-solid fa-lock"></i>
-            <input type="password" [(ngModel)] = "password" name="pwd" placeholder="password">
+            <input type="password" [(ngModel)]="password" name="pwd" placeholder="password">
           </div>
           <p><a href="#">Forgot your Password?</a></p>
         </div>
-        <p style="color: red;" *ngIf="error">{{error}}</p>
+        <div *ngIf="error">
+          <p class="text-red-600">{{error}}</p>
+        </div>
         <div class="btn-field">
           <button type="submit" id="signinBtn" name="submit" class="disable" >Sign In</button>
         </div>
-        <div class="check-box">
-          <input type="checkbox" id="rememberMeCheckbox">
-          <label for="rememberMeCheckbox">Remember me</label>
-        </div>
+
+
         <p>Don't have account?</p>
         <div class="btn-1">
         <!-- <button href="register.php" type="button" id="btn-1" class="disable">REGISTER</button> -->
-          <a href="canidonate.php" type="button" id="btn-1" class="disable clickable">REGISTER</a>
-          <a href="index.php" type="button" class="back" > Go back</a>
+          <a routerLink="/registration" id="btn-1" class="disable clickable">REGISTER</a>
+          <a routerLink="" type="button" class="back" > Go back</a>
         </div>
       </form>
     </div>
   </div>
+

@@ -7,11 +7,19 @@ import {HttpClientModule} from '@angular/common/http';
 import { RegistrationComponent } from './registration/registration.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { DemoComponent } from './demo/demo.component';
+import { RequestformComponent } from './registration/requestform/requestform.component';
+import { CampComponent } from './camp/camp.component';
+import { CampshowComponent } from './camp/campshow/campshow.component';
 @NgModule({
   declarations: [
     AppComponent,
     RegistrationComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    DemoComponent,
+    RequestformComponent,
+    CampComponent,
+    CampshowComponent
   ],
   imports: [
     BrowserModule,

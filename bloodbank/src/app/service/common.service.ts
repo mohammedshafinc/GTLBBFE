@@ -10,6 +10,8 @@ export class CommonService {
   public loginUrl: string = 'http://localhost:8090/enlife/login';
   public regUrl: string = 'http://localhost:8090/enlife/register';
   public searchApi: string = 'http://localhost:8090/enlife/search';
+  public campApi: string = 'http://localhost:8090/enlife/campregistration';
+  public campDetailsApi: string = 'http://localhost:8090/enlife/camplist';
 
   userLogin(data: any): Observable<any> {
     return this.http.post(this.loginUrl, data);
@@ -23,5 +25,13 @@ export class CommonService {
   }
   search(searchValue: any) {
     return this.http.post(this.searchApi, searchValue);
+  }
+
+  campReg(values: any): Observable<any> {
+    return this.http.post(this.campApi, values);
+  }
+
+  campData():Observable<any> {
+    return this.http.get(this.campDetailsApi)
   }
 }
