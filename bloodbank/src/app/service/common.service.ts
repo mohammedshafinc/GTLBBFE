@@ -12,6 +12,7 @@ export class CommonService {
   public searchApi: string = 'http://localhost:8090/enlife/search';
   public campApi: string = 'http://localhost:8090/enlife/campregistration';
   public campDetailsApi: string = 'http://localhost:8090/enlife/camplist';
+  public campCountApi:string = 'http://localhost:8090/enlife/campcount'
 
   userLogin(data: any): Observable<any> {
     return this.http.post(this.loginUrl, data);
@@ -33,5 +34,9 @@ export class CommonService {
 
   campData():Observable<any> {
     return this.http.get(this.campDetailsApi)
+  }
+
+  getCampCount():Observable<any> {
+    return this.http.get(this.campCountApi)
   }
 }
