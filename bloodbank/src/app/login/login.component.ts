@@ -28,6 +28,7 @@ export class LoginComponent {
 
     this.commonserv.userLogin(obj).subscribe({
       next: (res) => {
+
         console.log(res);
         console.log('logged succesfully');
         console.log(res.Name);
@@ -38,9 +39,9 @@ export class LoginComponent {
       },
       error: (error) => {
         console.log(error);
-        this.error = error.error;
+        this.error = error.error.message;
         console.log(this.error);
-        console.log('hiiii');
+        console.log('fill all the field');
       },
     });
   }

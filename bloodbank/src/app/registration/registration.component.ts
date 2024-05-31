@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonService } from '../service/common.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -12,7 +13,7 @@ export class RegistrationComponent implements OnInit{
   errMsg = '';
   maxDate!: Date;
   lastDonate!: String;
-  constructor(private fb: FormBuilder, private commonserv: CommonService) {}
+  constructor(private fb: FormBuilder, private commonserv: CommonService , private router:Router) {}
 
   registrationForm = this.fb.group({
     name: ['', Validators.required],
@@ -50,6 +51,7 @@ export class RegistrationComponent implements OnInit{
       next: (res) => {
         console.log(res);
         console.log('suc');
+        this.router.navigateByUrl('')
       },
       error: (error) => {
         console.log(error);

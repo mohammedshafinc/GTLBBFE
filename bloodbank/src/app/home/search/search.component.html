@@ -43,7 +43,7 @@
 
   <!-- search result -->
 </div>
-<div *ngIf="message">
+<div *ngIf="message && searchResult.length <= 0">
   <p>{{ message }}</p>
 </div>
 <div *ngIf="searchResult.length > 0" class="overflow-x-auto">

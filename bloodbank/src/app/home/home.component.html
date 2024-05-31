@@ -6,7 +6,7 @@
   <nav class="navbar">
     <a routerLink="/home">Home</a>
     <a *ngIf="!name" routerLink="/authform">Donate</a>
-    <a>Camps<span class="notification-count">{{count}}</span></a>
+    <a routerLink="/showcamp">Camps<span class="notification-count">{{count}}</span></a>
     <a *ngIf="!name" routerLink="/login">Login</a>
     <a (click)="logout()" *ngIf="name">Logout</a>
     <a *ngIf="name">{{name}}</a>
@@ -23,7 +23,7 @@
     </p>
     <h3>Search For <span>Donors</span></h3>
     <!-- HTML form for the search bar -->
-    <app-search></app-search>
+    <!-- <app-search></app-search> -->
     <!-- Display the search results if a blood group and/or city has been selected -->
     <!-- Add a div for the popup window -->
   </div>
